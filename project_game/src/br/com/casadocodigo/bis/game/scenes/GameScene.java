@@ -21,6 +21,7 @@ import br.com.casadocodigo.bis.R;
 import br.com.casadocodigo.bis.config.Assets;
 import br.com.casadocodigo.bis.config.Runner;
 import br.com.casadocodigo.bis.game.control.GameButtons;
+import br.com.casadocodigo.bis.game.control.Touch;
 import br.com.casadocodigo.bis.game.engines.MeteorsEngine;
 import br.com.casadocodigo.bis.game.interfaces.MeteorsEngineDelegate;
 import br.com.casadocodigo.bis.game.interfaces.PauseDelegate;
@@ -83,6 +84,10 @@ public class GameScene extends CCLayer implements MeteorsEngineDelegate,
 		GameButtons gameButtonsLayer = GameButtons.gameButtons();
 		gameButtonsLayer.setDelegate(this);
 		this.addChild(gameButtonsLayer);
+		
+		//Criando botão de touch evento
+		Touch gameTouch = new Touch();
+		this.addChild(gameTouch);
 
 		// Create Layers
 		this.meteorsLayer = CCLayer.node();
